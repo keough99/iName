@@ -1,0 +1,14 @@
+name: iName
+version: 0.1.0
+main: com.github.pocketkid2.name.NamePlugin
+author: Pocketkid2
+description: Name items instantly!
+commands:
+    name:
+        description: Type this command to rename items
+        usage: /<command> [name]
+        permission: iname.command
+permission:
+    iname.command:
+        description: Main command permission
+        default: op
