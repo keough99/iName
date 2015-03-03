@@ -15,7 +15,7 @@ public class NameCommand implements CommandExecutor {
 
 	// Main class reference
 	public NamePlugin plugin;
-	
+
 	// Constructor
 	public NameCommand(NamePlugin pl) {
 		plugin = pl;
@@ -29,26 +29,26 @@ public class NameCommand implements CommandExecutor {
 			sender.sendMessage(ChatColor.RED + "You have to be a player!");
 			return true;
 		}
-		
+
 		// Check for permission
 		if (!(sender.hasPermission("iname.command"))) {
 			sender.sendMessage(ChatColor.RED + "You can't do that!");
 			return true;
 		}
-		
+
 		// Create player object
 		Player player = (Player) sender;
-		
+
 		// Check for item
 		if (player.getItemInHand() == null || player.getItemInHand().getType() == Material.AIR) {
 			player.sendMessage(ChatColor.RED + "You aren't holding anything!");
 			return true;
 		}
-		
+
 		// Create item object
 		ItemStack stack = player.getItemInHand();
 		ItemMeta meta = stack.getItemMeta();
-		
+
 		// Check for no args
 		if (args.length == 0) {
 			// Remove name
@@ -56,11 +56,11 @@ public class NameCommand implements CommandExecutor {
 			player.sendMessage(ChatColor.AQUA + "Name cleared!");
 		} else {
 			// Set name
-			String name = plugin.stitch(args);
+			String name = plugin.colors(plugin.stitch(args));
 			meta.setDisplayName(name);
 			player.sendMessage(ChatColor.AQUA + "Name changed!");
 		}
-		
+
 		// Cleanup
 		stack.setItemMeta(meta);
 		player.setItemInHand(stack);
