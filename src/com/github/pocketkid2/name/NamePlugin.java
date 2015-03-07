@@ -35,6 +35,6 @@ public class NamePlugin extends JavaPlugin {
 
 	// Add colors
 	public String colors(String s) {
-		return s.replaceAll("&", String.valueOf(ChatColor.COLOR_CHAR));
+		return ChatColor.translateAlternateColorCodes('&', s);
 	}
 }
