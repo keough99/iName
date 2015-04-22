@@ -1,5 +1,7 @@
 package com.github.pocketkid2.name.commands;
 
+import java.util.Arrays;
+
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -11,13 +13,13 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import com.github.pocketkid2.name.NamePlugin;
 
-public class NameCommand implements CommandExecutor {
+public class LoreCommand implements CommandExecutor {
 
 	// Main class reference
 	public NamePlugin plugin;
 
 	// Constructor
-	public NameCommand(NamePlugin pl) {
+	public LoreCommand(NamePlugin pl) {
 		plugin = pl;
 	}
 
@@ -31,7 +33,7 @@ public class NameCommand implements CommandExecutor {
 		}
 
 		// Check for permission
-		if (!(sender.hasPermission("iname.command.name"))) {
+		if (!(sender.hasPermission("iname.command.lore"))) {
 			sender.sendMessage(ChatColor.RED + "You can't do that!");
 			return true;
 		}
@@ -51,14 +53,14 @@ public class NameCommand implements CommandExecutor {
 
 		// Check for no args
 		if (args.length == 0) {
-			// Remove name
-			meta.setDisplayName("");
-			player.sendMessage(ChatColor.AQUA + "Name cleared!");
+			// Remove lore
+			meta.setLore(null);
+			player.sendMessage(ChatColor.AQUA + "Lore cleared!");
 		} else {
-			// Set name
-			String name = plugin.colors(plugin.stitch(args));
-			meta.setDisplayName(name);
-			player.sendMessage(ChatColor.AQUA + "Name changed!");
+			// Set lore
+			String lore = plugin.colors(plugin.stitch(args));
+			meta.setLore(Arrays.asList(lore));
+			player.sendMessage(ChatColor.AQUA + "Lore changed!");
 		}
 
 		// Cleanup
