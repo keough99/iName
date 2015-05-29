@@ -1,0 +1,21 @@
+name: iName
+main: com.github.pocketkid2.name.NamePlugin
+version: 0.1.0
+author: Pocketkid2
+description: Change item names and lores with an easy command!
+commands:
+    name:
+        description: Change or reset an item name!
+        usage: /name [name]
+        permission: iname.command.name
+    lore:
+        description: Change or reset item lores!
+        usage: /lore [lore]
+        permission: iname.command.lore
+permissions:
+    iname.command.name:
+        description: Allows you to use the command /name
+        default: op
+    iname.command.lore:
+        description: Allows you to use the command /lore
+        default: op
