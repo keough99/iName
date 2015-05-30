@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.pocketkid2.name</groupId>
   <artifactId>iName</artifactId>
-  <version>0.1.0</version>
+  <version>0.4.0</version>
   <name>iName</name>
   <description>A Java plugin for Bukkit/Spigot servers that assists in changing item names or lores.</description>
   <build>
