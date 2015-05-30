@@ -1,6 +1,6 @@
 name: iName
 main: com.github.pocketkid2.name.NamePlugin
-version: 0.1.0
+version: 0.4.0
 author: Pocketkid2
 description: Change item names and lores with an easy command!
 commands:
